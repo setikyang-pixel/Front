@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-function AddUser({arg} ) {    
+function AddUser({ arg }) {
   let [userinfo, setUserInfo] = useState(arg);
   useEffect(() => {
     setUserInfo(arg);
@@ -16,16 +16,19 @@ function AddUser({arg} ) {
       userinfo.map((i) => (i.id == id ? { ...i, completed: false } : i)),
     );
   }
+  function del(id) {
+    setUserInfo(userinfo.filter((i) => i.id != id));
+  }
   return (
     <div className="userInform">
-      {userinfo.map((t) => {
+      {userinfo.map((t, i) => {
         return (
-          <div className="UserInfoDiv" key={t.id}>
+          <div className="UserInfoDiv" key={i}>
             <p>{t.title}</p>
-            <p>{t.id}</p>
             <p>{t.completed + ""}</p>
             <button onClick={() => pass(t.id)}>Pass</button>
             <button onClick={() => unpass(t.id)}>Unpass</button>
+            <button onClick={() => del(t.id)}>Delete</button>
           </div>
         );
       })}

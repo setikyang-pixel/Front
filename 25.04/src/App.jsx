@@ -29,7 +29,6 @@ function App() {
   function newUser(text) {
     if (!text) return;
     const newItem = {
-      id: user.length + 1,
       title: text,
       completed: false,
     };
