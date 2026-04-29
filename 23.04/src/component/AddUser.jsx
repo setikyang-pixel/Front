@@ -3,20 +3,14 @@ import { useState } from "react";
 export default function AddUser({ add }) {
   const [name, setname] = useState("");
   const [age, setage] = useState("");
+  const [err,setErr] = useState("")
 
   function handle() {
-    if (!name && !age) {
-      alert("Please fill in the specified field ` name & age");
+    if (!name || !age) {
+      setErr("Error enter for name and age")
       return;
     }
-    if (!name) {
-      alert("Please fill in the specified field ` name");
-      return;
-    }
-    if (!age) {
-      alert("Please fill in the specified field ` age");
-      return;
-    }
+    
     let fullInfo = {name:name, age:age};
     add(fullInfo);
     setname("");
@@ -25,6 +19,7 @@ export default function AddUser({ add }) {
   return (
     <>
       <div className="Header">
+      {err && (<p className = "error">{err}</p>)}
         <p>Login</p>
         <input
           required

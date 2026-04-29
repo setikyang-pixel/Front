@@ -52,3 +52,10 @@ body {
   transform: scale(1.1, 1.1);
   box-shadow: 5px 4px 5px;
 }
+
+.error{
+  background-color: red;
+  border-radius: 15px;
+  width: 250px;
+  height: 70px;
+}
