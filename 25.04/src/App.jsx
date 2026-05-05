@@ -29,6 +29,7 @@ function App() {
   function newUser(text) {
     if (!text) return;
     const newItem = {
+      id: Date.now(), 
       title: text,
       completed: false,
     };
