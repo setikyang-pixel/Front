@@ -192,13 +192,6 @@ tbody td {
   font-variant-numeric: tabular-nums;
 }
  
-.salary-cell::before {
-  content: '$';
-  font-size: 0.8em;
-  opacity: 0.7;
-  margin-right: 1px;
-}
- 
 .actions-cell {
   display: flex;
   gap: 6px;

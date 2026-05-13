@@ -21,7 +21,7 @@ export default function Table() {
             <tr key={i.id}>
               <td style={{ fontWeight: 500 }}>{i.name}</td>
               <td>{i.age}/years</td>
-              <td className="salary-cell">{i.salary.toLocaleString()}</td>
+              <td className="salary-cell">֏{i.salary}</td>
               <td>
                 <div className="actions-cell">
                   <button className="btn btn-up" onClick={() => context.upSalary(i.id)}>Up</button>
